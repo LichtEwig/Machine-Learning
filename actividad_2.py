@@ -68,6 +68,7 @@ elev=np.power(array1,array2)
 print("e: la elevacion de los elementos es del primer array al segundo: ",elev)
 
 
+
 # 4. Manipular los elementos de un array:
 # Enunciado: Crea un array utilizando el método np.array() con los siguientes elementos: [1, 2, 3, 4, 5].
 #   a) Utiliza el método np.reshape() para cambiar la forma del array a (5, 1). Imprime el resultado por consola.
@@ -92,6 +93,7 @@ print("e: se agrego el elemento 6: ",agr)
 # Visite la documentación de Matplotlib para obtener más información sobre los métodos utilizados en esta actividad:
 # https://matplotlib.org/stable/api/index.html
 
+
 # 1. Crear un gráfico de líneas:
 # Enunciado: Crea un array utilizando el método np.array() con los siguientes elementos: [1, 2, 3, 4, 5].
 #   a) Crea un gráfico de líneas utilizando el método plt.plot().
@@ -109,6 +111,7 @@ plt.ylabel("Eje y")
 plt.show()
 
 
+
 # 2. Crear un gráfico de barras:
 # Enunciado: Crea un array utilizando el método np.array() con los siguientes elementos: [1, 2, 3, 4, 5].
 #   a) Crea un gráfico de barras utilizando el método plt.bar().
@@ -124,6 +127,7 @@ plt.xlabel("Eje x")
 plt.ylabel("Eje y")
 
 plt.show()
+
 
 
 # 3. Crear un gráfico de dispersión con un array de dos dimensiones:
@@ -146,17 +150,20 @@ plt.show()
 
 
 # 4. Crear un gráfico de dispersión con un array de tres dimensiones:
-# Enunciado: Crea un array utilizando el método np.array() con los siguientes elementos: [[1, 2, 3], [4, 5, 6]].
-#   a) Crea un gráfico de dispersión utilizando el método plt.scatter().
-#   b) Utiliza el método plt.title() para agregar el título "Gráfico de dispersión 3D".
-#   c) Utiliza el método plt.xlabel() para agregar la etiqueta del eje x "Eje x".
-#   d) Utiliza el método plt.ylabel() para agregar la etiqueta del eje y "Eje y".
-#   e) Utiliza el método plt.show() para mostrar el gráfico.
+# Enunciado: Crea tres vectores de 100 elementos ALEATORIOS, usando rand() de np.random
+#   a) Crea una figura y un objeto de proyección 3D utilizando plt.subplots(subplot_kw={'projection': '3d'}).
+#   b) Utiliza el método scatter() del objeto de proyección para crear el gráfico de dispersión.
+#   c) Utiliza el método set_title() del objeto de proyección para agregar el título "Gráfico de dispersión 3D".
+#   d) Utiliza el método set_xlabel() del objeto de proyección para agregar la etiqueta del eje x "Eje x".
+#   e) Utiliza el método set_ylabel() del objeto de proyección para agregar la etiqueta del eje y "Eje y".
+#   f) Utiliza el método show() de plt para mostrar el gráfico.
+
 
 matriz5= np.array([[1, 2, 3], [4, 5, 6]])
-x1 = matriz5[:,0]
-y1 = matriz5[:,1]
-z = matriz5[:, 2]
+x1 = np.random.rand(100)
+y1 = np.random.rand(100)
+z = np.random.rand(100)
+plt.subplots(subplot_kw={'projection': '3d'})
 plt.scatter(x1,y1,z)
 plt.title("Gráfico de dispersión 3D")
 plt.xlabel("Eje x") 
@@ -177,14 +184,15 @@ plt.show()
 #   j) Utiliza el método plt.show() para mostrar el gráfico.
 
 arrayA= np.array([1, 2, 3, 4, 5])
-arrayB= np.arraay([6, 7, 8, 9, 10])
+arrayB= np.array([6, 7, 8, 9, 10])
 plt.bar(arrayA,arrayB)
-plt.xlabel(arrayA,"Eje x")
-plt.ylabel(arrayB,"Eje y")
+plt.title("Gráfico de barras")
+plt.xlabel("Eje x")
+plt.ylabel("Eje y")
 plt.legend("Leyenda")
-plt.xticks(arrayA,"Eje x")
-plt.yticks(arrayB,"Eje y")
-plt.grid()
+plt.xticks(arrayA,["Etiqueta 1", "Etiqueta 2", "Etiqueta 3", "Etiqueta 4", "Etiqueta 5"])
+plt.yticks(arrayB,["Etiqueta 6", "Etiqueta 7", "Etiqueta 8", "Etiqueta 9", "Etiqueta 10"])
+plt.grid(True)
 
 plt.show() 
 
